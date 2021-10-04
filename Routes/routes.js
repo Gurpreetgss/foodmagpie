@@ -5,11 +5,12 @@ const login = require("../model/signIn");
 const resetPassword = require("../model/resetPassword");
 const regHotel=require("../Model/RegHotel");
 const regOrg=require("../Model/RegOrg");
+const regReq=require("../Model/regReq");
 const update = require("../model/update");
 // const insertProp = require("../model/InsertProperty");
 // const Properties = require("../model/GetProperties");
 // const UpdateProp = require("../model/UpdateProperty");
-// const DeleteProperty = require("../model/DeleteProperty");
+const DeleteProperty = require("../model/Delete");
 // const getRenterProperty = require("../model/GetRProperty");
 // const getEmaiId = require("../model/GetEmaiId");
 // const getFilterProperty = require("../model/filter");
@@ -54,13 +55,14 @@ router.post(
 
 router.post("/regOrg",regOrg);
 router.post("/regHotel",regHotel);
+router.post("/regReq",regReq);
 router.post("/update", update);
 router.post("/reset", resetPassword);
 // router.post("/insertprop", insertProp);
 
 // router.get("/getprop", Properties);
 // router.post("/updateprop", UpdateProp);
-// router.post("/deleteprop", DeleteProperty);
+router.post("/delete", DeleteProperty);
 // router.post("/getrenterprop", getRenterProperty);
 // router.post("/addtofav", addToFav);
 // router.post("/viewfav", viewFav);
