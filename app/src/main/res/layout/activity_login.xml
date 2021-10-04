@@ -10,10 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CEACABAB">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/frag_frame"/>
+
         <ImageView
             android:id="@+id/ani1"
             android:layout_width="match_parent"
@@ -21,7 +18,6 @@
             android:layout_marginTop="40dp"
            android:src="@drawable/applogo"
             android:textAlignment="center"
-
             >
 
         </ImageView>
@@ -79,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
              android:text="LOGIN"
+                android:background="@color/pale_orange"
               android:textColorHint="@color/White"
                 android:drawablePadding="5dp"
                android:layout_marginRight="50dp"

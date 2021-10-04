@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMpie">
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Fragment.SignupFragment"></activity>
 
         <activity android:name=".Welcome" />
         <activity android:name=".SplashActivity">
