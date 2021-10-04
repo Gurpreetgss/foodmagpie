@@ -2,13 +2,15 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const conn = require("../config/database");
 
-const register = async (req, res, next) => {
+const regHotel= async (req, res, next) => {
   const error = validationResult(req);
 
   if (!error) {
     return res.json({ status: 412, error: error.array() });
   }
   try {
+    console.log("test")
+    //nodemon
 //     conn.query(
 //       "SELECT * from user WHERE email=?",
 //       [req.body.email],
@@ -29,12 +31,15 @@ const register = async (req, res, next) => {
 //           console.log(uname);
 //           if (uname.trim() !== "" && uname !== undefined) {
             conn.query(
-              "INSERT INTO hotel (Name,Email,password,User_type) VALUES (?,?,?,?)",
+              "INSERT INTO hotel(Hotel_id,Org_id,Hotel_name,Hotel_address,Hotel_phn,Hotel_lat,Hotel_long) VALUES (?,?,?,?,?,?,?)",
               [
-                req.body.Name,
-                req.body.email,
-                pass,
-                req.body.User_type,
+                req.body.Hotel_id,
+                req.body.Org_id,
+                req.body.Hotel_name,
+                req.body.Hotel_address,
+                req.body.Hotel_phn,
+                req.body.Hotel_lat,
+                req.body.Hotel_long,
               ],
               function (error, results, fields) {
                 if (error) {
@@ -62,4 +67,4 @@ const register = async (req, res, next) => {
     next(err);
   }
 };
-module.exports = register;
+module.exports = regHotel;

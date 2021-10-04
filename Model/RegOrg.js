@@ -10,6 +10,7 @@ const regOrg = async (req, res, next) => {
   }
   try {
     console.log("test")
+    //nodemon
 //     conn.query(
 //       "SELECT * from user WHERE email=?",
 //       [req.body.email],

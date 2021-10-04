@@ -1,10 +1,11 @@
 const { check } = require("express-validator");
+
 const reg = require("../model/registerUser");
 const login = require("../model/signIn");
-// const update = require("../model/update");
 const resetPassword = require("../model/resetPassword");
-// const regHotel=require("../Model/RegisterHotel");
+const regHotel=require("../Model/RegHotel");
 const regOrg=require("../Model/RegOrg");
+const update = require("../model/update");
 // const insertProp = require("../model/InsertProperty");
 // const Properties = require("../model/GetProperties");
 // const UpdateProp = require("../model/UpdateProperty");
@@ -52,7 +53,8 @@ router.post(
 );
 
 router.post("/regOrg",regOrg);
-// router.post("/update", update);
+router.post("/regHotel",regHotel);
+router.post("/update", update);
 router.post("/reset", resetPassword);
 // router.post("/insertprop", insertProp);
 
