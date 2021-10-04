@@ -9,6 +9,7 @@ const regOrg = async (req, res, next) => {
     return res.json({ status: 412, error: error.array() });
   }
   try {
+    console.log("test")
 //     conn.query(
 //       "SELECT * from user WHERE email=?",
 //       [req.body.email],
