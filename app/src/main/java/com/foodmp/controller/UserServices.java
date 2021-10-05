@@ -20,6 +20,6 @@ public interface UserServices {
 
     @POST("reset/")
     @FormUrlEncoded
-    Call<Register> resetPassword(@Field("email") String email,
+    Call<Register> resetPassword(@Field("Email") String email,
                                  @Field("password") String password);
 }

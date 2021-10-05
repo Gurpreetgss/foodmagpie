@@ -194,6 +194,7 @@
     <color name="icon_dash">#b4927a</color>
 
     <color name="text_color_home">#6A6A6A</color>
+    <color name="background_color">#CEACABAB</color>
 
     <color name="color_bg_1">#DB1F70</color>
     <color name="color_bg_2">#C32289</color>

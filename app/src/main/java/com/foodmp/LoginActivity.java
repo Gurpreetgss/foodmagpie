@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.foodmp.Fragment.ResetPasswordFragment;
 import com.foodmp.Fragment.SignupFragment;
 import com.foodmp.controller.ApiUtils;
 import com.foodmp.controller.UserServices;
@@ -37,8 +39,18 @@ public class LoginActivity extends AppCompatActivity {
         errortxt=(TextView) findViewById(R.id.errortextlogin);
         Button loginBtn=(Button) findViewById(R.id.btn_login);
         TextView signupText=(TextView) findViewById(R.id.signupText);
+        TextView Resetpassword=(TextView) findViewById(R.id.Resetpassword);
         userServices = ApiUtils.getUserService();
 
+        Resetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment frg=new ResetPasswordFragment();
+                FragmentManager fragmentManager=getSupportFragmentManager();
+                FragmentTransaction ft=fragmentManager.beginTransaction();
+                ft.replace(R.id.frag_frame,frg).commit();
+            }
+        });
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

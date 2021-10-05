@@ -6,10 +6,12 @@
     android:background="@drawable/coverimage">
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CEACABAB">
+
 
         <ImageView
             android:id="@+id/ani1"
@@ -121,5 +123,8 @@
         </TextView>
 
     </RelativeLayout>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frag_frame"/>
 </RelativeLayout>
