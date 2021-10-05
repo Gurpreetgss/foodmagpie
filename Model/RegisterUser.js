@@ -51,6 +51,7 @@ const register = async (req, res, next) => {
                   res.json({
                     status: true,
                     message: "success",
+                    results,
                   });
                 }
               }
