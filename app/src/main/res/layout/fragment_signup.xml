@@ -177,6 +177,8 @@
                     android:layout_gravity="center"
                     android:background="@color/pale_orange"
                     android:text="SignUp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="50dp"
                     android:textColor="#FFFFFF"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -193,6 +195,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/signupText"
                 android:textStyle="bold"
+                android:textSize="15dp"
+
                 android:text="Already have an Account? Login"
                 android:layout_marginBottom="20dp"
                 android:textAlignment="center"

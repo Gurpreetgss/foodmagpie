@@ -13,8 +13,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.foodmp.Fragment.SignupFragment;
+import com.foodmp.controller.ApiUtils;
+import com.foodmp.controller.UserServices;
+import com.foodmp.model.LoginResponse;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    UserServices userServices;
+
     EditText emailIdEditText;
     TextView errortxt;
     @Override
@@ -27,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         errortxt=(TextView) findViewById(R.id.errortextlogin);
         Button loginBtn=(Button) findViewById(R.id.btn_login);
         TextView signupText=(TextView) findViewById(R.id.signupText);
+        userServices = ApiUtils.getUserService();
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 String passwordText = passwordEditText.getText().toString();
 
                 if (validateLogin(emaidId, passwordText)) {
-                   // Authenticate(emaidId, passwordText);
+                    AuthenticateUser(emaidId, passwordText);
                 }
             }
         });
@@ -49,6 +61,69 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void AuthenticateUser(String email,String password) {
+        try {
+            Call<LoginResponse> call = userServices.loginUser(email,password);
+            call.enqueue(new Callback<LoginResponse>() {
+                @Override
+                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                    if (response.isSuccessful()) {
+
+                        if(response.body().getSuccess()){
+                            new MaterialAlertDialogBuilder(LoginActivity.this).setMessage("Login Successfull")
+                                    .setPositiveButton("ok",(dialog, which) -> {
+                                        SharedPref shrd=new SharedPref(getApplication());
+                                        //     shrd.setIslogin(true);
+                                        shrd.setFirstname(response.body().getData().get(0).getFirstname());
+                                        shrd.setType(response.body().getData().get(0).getType());
+                                        if(response.body().getData().get(0).getType().equals("o")){
+
+                                        }else if(response.body().getData().get(0).getType().equals("h")){
+
+                                        }else{
+
+                                        }
+                                        System.out.println("name----"+shrd.getFirstname());
+//                                  sout
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+
+                                    }).show();
+
+                        }else {
+
+                            new MaterialAlertDialogBuilder(LoginActivity.this).setMessage(response.body().getMessage())
+                                    .setPositiveButton("OK",(dialog, which) -> {
+                                        /////
+                                    }).show();
+                        }
+                    } else {
+
+                        new MaterialAlertDialogBuilder(LoginActivity.this).setMessage("Error! Please try again!")
+                                .setPositiveButton("OK",(dialog, which) -> {
+                                    /////
+                                }).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<LoginResponse> call, Throwable t) {
+
+                    new MaterialAlertDialogBuilder(LoginActivity.this).setMessage("Error! Please try again!")
+                            .setPositiveButton("OK",(dialog, which) -> {
+                                /////
+                            }).show();
+                }
+            });
+        }catch (Exception ex){
+
+            new MaterialAlertDialogBuilder(LoginActivity.this).setMessage(ex.toString())
+                    .setPositiveButton("OK",(dialog, which) -> {
+                        /////
+                    }).show();
+
+        }
+    }
 
 
     private boolean validateLogin(String email, String password) {

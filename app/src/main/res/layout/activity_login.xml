@@ -110,6 +110,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/signupText"
+            android:textSize="15dp"
+            android:textStyle="bold"
             android:text="Don't Have an Account? Create Account"
             android:layout_marginBottom="20dp"
             android:textAlignment="center"
