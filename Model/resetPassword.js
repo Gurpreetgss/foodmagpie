@@ -1,3 +1,5 @@
+
+
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const conn = require("../config/database");
@@ -7,8 +9,9 @@ const updatePass = async (req, res, next) => {
     const salt = await bcrypt.genSalt(10);
     // now we set user password to hashed password
     let pass = await bcrypt.hash(req.body.password, salt);
+    console.log(pass);
     await conn.query(
-      `UPDATE user SET password='${pass}' WHERE email='${req.body.email}'`,
+      `UPDATE user SET password='${pass}' WHERE Email='${req.body.Email}'`,
 
       function (error, results, fields) {
         if (error) {
@@ -24,8 +27,9 @@ const updatePass = async (req, res, next) => {
             message: "password updated Successfully",
           });
         } else {
+          console.log("hwree");
           res.json({
-            status: true,
+            status: false,
             message: "No Such Email Id",
           });
         }

@@ -11,9 +11,18 @@ const register = async (req, res, next) => {
   try {
     const salt = await bcrypt.genSalt(10);
     // now we set user password to hashed password
+    console.log(req.body.password);
+
+    console.log(req.body.Email);
+
+    console.log(req.body.Name);
+
+    console.log(req.body.Phone_num);
+
+    console.log(req.body.User_type);
     let pass = await bcrypt.hash(req.body.password, salt);
     conn.query(
-      "SELECT * from user WHERE email=?",
+      "SELECT * from user WHERE Email=?",
       [req.body.email],
       function (error, results, fields) {
         if (error) {
@@ -23,42 +32,37 @@ const register = async (req, res, next) => {
             message: "there are some error with query",
           });
         } else if (results.length != 0) {
+          console.log("here");
           res.json({
             status: false,
             message: "Email id already exists",
           });
         } else {
-          let uname = req.body.email;
-          console.log(uname);
-          if (uname.trim() !== "" && uname !== undefined) {
-            conn.query(
-              "INSERT INTO user (Name,Email,password,User_type) VALUES (?,?,?,?)",
-              [
-                req.body.Name,
-                req.body.email,
-                pass,
-                req.body.User_type,
-              ],
-              function (error, results, fields) {
-                if (error) {
-                  console.log(error);
-                  res.json({
-                    status: false,
-                    message: "there are some error with query",
-                  });
-                } else {
-                  console.log("response here");
-                  res.json({
-                    status: true,
-                    message: "success",
-                    results,
-                  });
-                }
+          conn.query(
+            "INSERT INTO user (Name,Email,Phone_num,password,User_type) VALUES (?,?,?,?,?)",
+            [
+              req.body.Name,
+              req.body.Email,
+              req.body.Phone_num,
+              pass,
+              req.body.User_type,
+            ],
+            function (error, results, fields) {
+              if (error) {
+                console.log(error);
+                res.json({
+                  status: false,
+                  message: "there are some error with query",
+                });
+              } else {
+                console.log("response here");
+                res.json({
+                  status: true,
+                  message: "success",
+                });
               }
-            );
-          } else {
-            return res.json({ status: false, message: error.array() });
-          }
+            }
+          );
         }
       }
     );

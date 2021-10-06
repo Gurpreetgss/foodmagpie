@@ -16,7 +16,7 @@ const SignIn = async (req, res, next) => {
   if (uname.trim() !== "" && uname !== undefined) {
     try {
       await conn.query(
-        "SELECT * from user WHERE email=?",
+        "SELECT * from user WHERE Email=?",
         [uname],
         function (error, results, fields) {
           if (error) {
@@ -34,6 +34,7 @@ const SignIn = async (req, res, next) => {
                 req.body.password,
                 results[0].password,
                 function (err, resb) {
+                  console.log(results);
                   if (resb) {
                     return res.json({
                       status: 404,
