@@ -2,6 +2,7 @@ package com.foodmp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -28,6 +29,8 @@ public class UserActivity extends AppCompatActivity{
         OrganizationsFragment firstFragment = new OrganizationsFragment();
         HistoryFragment secondFragment = new HistoryFragment();
         UserProfileFragment thirdFragment = new UserProfileFragment();
+        bottomNavigationView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWhiteDark));
+
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
             public void onNavigationItemReselected(@NonNull MenuItem item) {
