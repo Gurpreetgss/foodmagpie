@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMpie"
         android:usesCleartextTraffic="true">
+        <activity android:name=".UserActivity"></activity>
         <activity
             android:name=".Hotel"
-            android:label="@string/title_activity_hotel"></activity>
+            android:label="@string/title_activity_hotel" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Fragment.SignupFragment" />
         <activity android:name=".Welcome" />

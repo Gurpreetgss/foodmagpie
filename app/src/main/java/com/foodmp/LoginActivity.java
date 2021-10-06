@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                                         }
                                         System.out.println("name----"+shrd.getFirstname());
 //                                  sout
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        startActivity(new Intent(LoginActivity.this, UserActivity.class));
 
 
                                     }).show();
@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             new MaterialAlertDialogBuilder(LoginActivity.this).setMessage(response.body().getMessage())
                                     .setPositiveButton("OK",(dialog, which) -> {
-                                        /////
+                                        ////
                                     }).show();
                         }
                     } else {
