@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMpie"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".Fragment.Individual_Organization_Activity"></activity>
+        <activity android:name=".UserActivity" />
         <activity
             android:name=".Hotel"
             android:label="@string/title_activity_hotel" />

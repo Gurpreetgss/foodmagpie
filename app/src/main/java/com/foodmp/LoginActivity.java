@@ -89,15 +89,15 @@ public class LoginActivity extends AppCompatActivity {
                                         shrd.setFirstname(response.body().getData().get(0).getFirstname());
                                         shrd.setType(response.body().getData().get(0).getType());
                                         if(response.body().getData().get(0).getType().equals("o")){
+                                            startActivity(new Intent(LoginActivity.this, UserActivity.class));
 
                                         }else if(response.body().getData().get(0).getType().equals("h")){
+                                            startActivity(new Intent(LoginActivity.this, Hotel.class));
 
                                         }else{
+                                            startActivity(new Intent(LoginActivity.this, UserActivity.class));
 
                                         }
-                                        System.out.println("name----"+shrd.getFirstname());
-//                                  sout
-                                        startActivity(new Intent(LoginActivity.this, UserActivity.class));
 
 
                                     }).show();

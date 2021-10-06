@@ -102,8 +102,16 @@ public class Welcome extends AppCompatActivity {
 
     private void launchHomeScreen() {
         shrdpreference.setFirstTimeLaunch(false);
-        startActivity(new Intent(Welcome.this, LoginActivity.class));
-        finish();
+        if(shrdpreference.getType().equals("o")) {
+            startActivity(new Intent(Welcome.this, LoginActivity.class));
+            finish();
+        }else if(shrdpreference.getType().equals("h")) {
+            startActivity(new Intent(Welcome.this, Hotel.class));
+            finish();
+        }else{
+            startActivity(new Intent(Welcome.this, UserActivity.class));
+            finish();
+        }
     }
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
