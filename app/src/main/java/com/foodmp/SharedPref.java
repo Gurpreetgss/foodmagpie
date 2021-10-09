@@ -79,9 +79,9 @@ public class SharedPref {
 
 
     public  void clearPreferences(){
-        setFirstname("");
-        setUserId(0);
-        setUserphnum("");
+//        setFirstname("");
+//        setUserId(0);
+//        setUserphnum("");
         setType("");
         //setIslogin(false);
 
