@@ -2,6 +2,7 @@ package com.foodmp.controller;
 
 import com.foodmp.model.DataOrg;
 import com.foodmp.model.LoginResponse;
+import com.foodmp.model.OrgList;
 import com.foodmp.model.Register;
 
 import retrofit2.Call;
@@ -30,5 +31,5 @@ public interface UserServices {
                                 @Field("Phone_num") String Contact, @Field("password") String password, @Field("User_type") String type);
 
     @GET("getOrg/")
-    Call<DataOrg> getOrgList();
+    Call<OrgList> getOrgList();
 }
