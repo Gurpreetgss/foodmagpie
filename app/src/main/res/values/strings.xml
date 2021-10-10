@@ -15,7 +15,7 @@
     <string name="title_activity_hotel">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">Profile</string>
     <string name="title_activity_user">MainActivity</string>
     <string name="title_activity_users">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
