@@ -96,8 +96,8 @@ public class LoginActivity extends AppCompatActivity {
 
                                             startActivity(new Intent(LoginActivity.this, Individual_Organization_Activity.class));
 
-                                        }else if(response.body().getData().get(0).getType().equals("h")){
-                                    //        startActivity(new Intent(LoginActivity.this, User.class));
+                                        }else if(response.body().getData().get(0).getType().equals("u")){
+                                          startActivity(new Intent(LoginActivity.this, User_View_Activity.class));
 
                                         }else{
                                           Fragment fragment=new HotelFragment();

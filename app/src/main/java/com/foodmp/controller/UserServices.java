@@ -1,11 +1,13 @@
 package com.foodmp.controller;
 
+import com.foodmp.model.DataOrg;
 import com.foodmp.model.LoginResponse;
 import com.foodmp.model.Register;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface UserServices {
@@ -27,4 +29,6 @@ public interface UserServices {
     Call<Register> userRegister(@Field("Name") String name, @Field("Email") String email,
                                 @Field("Phone_num") String Contact, @Field("password") String password, @Field("User_type") String type);
 
+    @GET("getOrg/")
+    Call<DataOrg> getOrgList();
 }
