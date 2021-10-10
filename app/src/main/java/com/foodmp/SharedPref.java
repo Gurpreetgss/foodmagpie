@@ -14,6 +14,7 @@ public class SharedPref {
     private static final String USERID="userid";
     private static final String USERTYPE="type";
     private static final String USERPHNUM="num";
+    private static  final  String FIRSTTIMEORG="firstorg";
 
 
 
@@ -77,12 +78,21 @@ public class SharedPref {
 
     }
 
+    public void setFirstTimeLaunchOrg(boolean isFirstTime) {
+        editor.putBoolean(FIRSTTIMEORG, isFirstTime);
+        editor.commit();
+    }
+
+    public boolean isFirstTimeLaunchOrg() {
+        return sharedPref.getBoolean(FIRSTTIMEORG, false);
+    }
 
     public  void clearPreferences(){
 //        setFirstname("");
 //        setUserId(0);
 //        setUserphnum("");
         setType("");
+        setFirstTimeLaunchOrg(false);
         //setIslogin(false);
 
     }

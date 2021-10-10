@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum {
 
-    @SerializedName("userid")
+    @SerializedName("User_id")
     @Expose
     private Integer userid;
     @SerializedName("Name")

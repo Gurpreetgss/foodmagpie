@@ -88,6 +88,8 @@ public class LoginActivity extends AppCompatActivity {
                                         SharedPref shrd=new SharedPref(getApplication());
                                         //     shrd.setIslogin(true);
                                         shrd.setFirstname(response.body().getData().get(0).getFirstname());
+                                        shrd.setUserId(response.body().getData().get(0).getUserid());
+
                                         String type=response.body().getData().get(0).getType();
                                         shrd.setType(type);
                                         if(response.body().getData().get(0).getType().equals("o")){

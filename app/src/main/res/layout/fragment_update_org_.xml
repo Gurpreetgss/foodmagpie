@@ -22,11 +22,11 @@
             android:layout_below="@+id/applogo"
             android:textColor="@color/pale_orange"
             android:textAlignment="center"
-            android:id="@+id/errortext"/>
+            android:id="@+id/errortext_org"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@id/errortext"
+            android:layout_below="@id/errortext_org"
             android:background="@drawable/edbackground"
             android:layout_marginRight="35dp"
             android:textAlignment="center"

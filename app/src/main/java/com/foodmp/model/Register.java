@@ -13,6 +13,9 @@ public class Register {
     @SerializedName("message")
     @Expose
     private String message;
+    @SerializedName("value")
+    @Expose
+    private Boolean val;
 
     public Boolean getStatus() {
         return status;
@@ -28,6 +31,14 @@ public class Register {
 
     public void setMessage(String message) {
         this.message = message;
+
+    }
+    public Boolean getValue() {
+        return val;
+    }
+
+    public void setValue(Boolean val) {
+        this.val = val;
     }
 
 }
