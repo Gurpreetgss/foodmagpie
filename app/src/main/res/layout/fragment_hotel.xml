@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverimage"
+    tools:context=".Fragment.Individual_Organization_Activity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/applogo"
+            android:layout_marginTop="80dp"
+            android:id="@+id/aplogo">
+        </ImageView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addfooditem"
+            android:layout_below="@id/aplogo"
+            android:text="Add Food Item"
+            android:textColor="@color/White"
+            android:layout_marginTop="10dp"
+            android:background="@color/pale_orange"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewfood"
+            android:layout_marginTop="10dp"
+            android:text="View Food Items"
+            android:textColor="@color/White"
+            android:layout_below="@id/addfooditem"
+            android:background="@color/pale_orange"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateProfile_hotel"
+            android:layout_marginTop="10dp"
+            android:labelFor="@+id/addHotel"
+            android:text="Update Profile"
+            android:textColor="@color/White"
+            android:layout_below="@id/viewfood"
+            android:background="@color/pale_orange"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signout_hotel"
+            android:layout_marginTop="10dp"
+            android:text="Signout"
+            android:textColor="@color/White"
+            android:layout_below="@id/updateProfile_hotel"
+            android:background="@color/pale_orange"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+
+
+
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/org_frame">
+
+    </FrameLayout>
+
+</RelativeLayout>

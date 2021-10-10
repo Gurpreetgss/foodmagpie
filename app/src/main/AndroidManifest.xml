@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.foodmp">
+    package="com.foodmp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMpie"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".Fragment.Individual_Organization_Activity"></activity>
-        <activity android:name=".UserActivity" />
+        android:usesCleartextTraffic="true" >
         <activity
-            android:name=".Hotel"
-            android:label="@string/title_activity_hotel" />
+            android:name=".User_View_Activity"
+            android:label="@string/title_activity_user__view_" >
+        </activity>
+        <activity android:name=".Fragment.Individual_Organization_Activity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Fragment.SignupFragment" />
         <activity android:name=".Welcome" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

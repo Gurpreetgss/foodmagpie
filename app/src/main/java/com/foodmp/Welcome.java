@@ -2,6 +2,7 @@ package com.foodmp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -19,6 +20,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.foodmp.Fragment.HotelFragment;
 
 
 public class Welcome extends AppCompatActivity {
@@ -102,16 +105,10 @@ public class Welcome extends AppCompatActivity {
 
     private void launchHomeScreen() {
         shrdpreference.setFirstTimeLaunch(false);
-        if(shrdpreference.getType().equals("o")) {
+
             startActivity(new Intent(Welcome.this, LoginActivity.class));
             finish();
-        }else if(shrdpreference.getType().equals("h")) {
-            startActivity(new Intent(Welcome.this, Hotel.class));
-            finish();
-        }else{
-            startActivity(new Intent(Welcome.this, UserActivity.class));
-            finish();
-        }
+
     }
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

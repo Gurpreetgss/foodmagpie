@@ -50,4 +50,5 @@
         android:text="SKIP"
         android:textColor="@android:color/white" />
 
+
 </RelativeLayout>

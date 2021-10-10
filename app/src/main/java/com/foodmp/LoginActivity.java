@@ -10,9 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.foodmp.Fragment.HotelFragment;
+import com.foodmp.Fragment.Individual_Organization_Activity;
 import com.foodmp.Fragment.ResetPasswordFragment;
 import com.foodmp.Fragment.SignupFragment;
 import com.foodmp.controller.ApiUtils;
@@ -87,15 +88,18 @@ public class LoginActivity extends AppCompatActivity {
                                         SharedPref shrd=new SharedPref(getApplication());
                                         //     shrd.setIslogin(true);
                                         shrd.setFirstname(response.body().getData().get(0).getFirstname());
-                                        shrd.setType(response.body().getData().get(0).getType());
+                                        String type=response.body().getData().get(0).getType();
+                                        shrd.setType(type);
                                         if(response.body().getData().get(0).getType().equals("o")){
-                                            startActivity(new Intent(LoginActivity.this, UserActivity.class));
+
+                                            startActivity(new Intent(LoginActivity.this, Individual_Organization_Activity.class));
 
                                         }else if(response.body().getData().get(0).getType().equals("h")){
-                                            startActivity(new Intent(LoginActivity.this, Hotel.class));
+                                    //        startActivity(new Intent(LoginActivity.this, User.class));
 
                                         }else{
-                                            startActivity(new Intent(LoginActivity.this, UserActivity.class));
+                                          Fragment fragment=new HotelFragment();
+                                          getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame,fragment).commit();
 
                                         }
 

@@ -71,7 +71,7 @@ public class SignupFragment extends AppCompatActivity {
         try {
             if(type.equals("Organizer")){
                 type="o";
-            }else if(type.equals("Hotel")){
+            }else if(type.equals("User")){
                 type="h";
 
             }else{
