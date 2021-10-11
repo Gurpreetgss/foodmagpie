@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverimage">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CEACABAB">
+
+
+        <ImageView
+            android:id="@+id/ani1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="40dp"
+           android:src="@drawable/applogo"
+            android:textAlignment="center"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ani1"
+            android:textColor="@color/pale_orange"
+            android:textAlignment="center"
+            android:id="@+id/errortextlogin"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/errortextlogin"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Your Email Id"
+            android:textAlignment="center"
+            android:padding="6dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/montserrat"
+            android:inputType="textEmailAddress"
+            android:id="@+id/email_ed"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/email_ed"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:padding="6dp"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Password"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/password_ed"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_ed"
+            android:gravity="center"
+            android:id="@+id/rel1_btn"
+            android:layout_marginTop="25dp">
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+             android:text="LOGIN"
+                android:background="@color/pale_orange"
+              android:textColorHint="@color/White"
+                android:drawablePadding="5dp"
+               android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#FFFFFF"
+          />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel1_btn"
+            android:text="Forgot Password?"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/pale_orange"
+            android:textAlignment="center"
+            android:id="@+id/Resetpassword"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signupText"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:text="Don't Have an Account? Create Account"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+
+            >
+
+        </TextView>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frag_frame"/>
+</RelativeLayout>

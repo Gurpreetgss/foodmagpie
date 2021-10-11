@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverimage"
+    tools:context=".Fragment.update_org_Fragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/applogo"
+            android:src="@drawable/applogo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/applogo"
+            android:textColor="@color/pale_orange"
+            android:textAlignment="center"
+            android:id="@+id/errortext_org"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/errortext_org"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Organization Name"
+            android:padding="4dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat"
+            android:inputType="text"
+            android:id="@+id/orgname_ed"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/orgname_ed"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Organization Address"
+            android:padding="4dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat"
+            android:inputType="text"
+            android:id="@+id/orgaddress_ed"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orgaddress_ed"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Organization Address"
+            android:lines="3"
+
+            android:padding="4dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat"
+            android:inputType="textMultiLine"
+            android:id="@+id/orgdesc_ed"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/orgdesc_ed"
+            android:background="@drawable/edbackground"
+            android:layout_marginRight="35dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="35dp"
+            android:hint="Enter Organization Address"
+            android:padding="4dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserrat"
+            android:inputType="number"
+            android:id="@+id/orgphone_ed"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submit_org_info"
+            android:layout_marginTop="20dp"
+            android:text="Submit"
+            android:textColor="@color/White"
+            android:layout_below="@id/orgphone_ed"
+            android:background="@color/pale_orange"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
