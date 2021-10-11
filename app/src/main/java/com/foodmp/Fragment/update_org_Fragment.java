@@ -55,6 +55,7 @@ public class update_org_Fragment extends Fragment implements LocationListener {
         Button submitOrgInfoBtn=(Button) view.findViewById(R.id.submit_org_info);
         shrdpref=new SharedPref(getActivity());
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+
         // Define the criteria how to select the locatioin provider -> use
         // default
         Criteria criteria = new Criteria();

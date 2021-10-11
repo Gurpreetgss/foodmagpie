@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.foodmp.Adapter.OrganizationAdapter;
 import com.foodmp.R;
 import com.foodmp.controller.ApiUtils;
 import com.foodmp.controller.UserServices;
@@ -30,6 +31,7 @@ import retrofit2.Response;
 public class OrganizationListFragment extends Fragment {
     UserServices userServices;
     List<OrgList> apart=new ArrayList<>();
+    OrganizationAdapter orgAdapter;
 
 
     private ProgressDialog progress;
@@ -47,11 +49,11 @@ public class OrganizationListFragment extends Fragment {
         lisRecyclerView.addItemDecoration(new DividerItemDecoration(lisRecyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         userServices = ApiUtils.getUserService();
-        progress=new ProgressDialog(getActivity());
-        progress.setMessage("Loading");
-        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-
-        progress.show();
+//        progress=new ProgressDialog(getActivity());
+//        progress.setMessage("Loading");
+//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//
+//        progress.show();
         getData();
         return view;
     }
@@ -66,14 +68,9 @@ public class OrganizationListFragment extends Fragment {
 
                         if(response.body().getStatus()){
 
-                            apart.add(response.body());
-                            for (int i = 0; i < 1; i++) {
-                                int len=apart.get(i).getData().size();
-                                for (int j = i; j <=len-1 ; j++) {
-                                 //   apData.add(apart.get(i).getData().get(j));
-
-                                }
-                            }
+                        //    apart.add(response.body().getData());
+                           orgAdapter=new OrganizationAdapter(getActivity(),response.body().getData());
+                           lisRecyclerView.setAdapter(orgAdapter);
 
                         }
                     } else {
