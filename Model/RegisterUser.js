@@ -10,16 +10,7 @@ const register = async (req, res, next) => {
   }
   try {
     const salt = await bcrypt.genSalt(10);
-    // now we set user password to hashed password
-    console.log(req.body.password);
 
-    console.log(req.body.Email);
-
-    console.log(req.body.Name);
-
-    console.log(req.body.Phone_num);
-
-    console.log(req.body.User_type);
     let pass = await bcrypt.hash(req.body.password, salt);
     conn.query(
       "SELECT * from user WHERE Email=?",

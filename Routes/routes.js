@@ -3,9 +3,9 @@ const { check } = require("express-validator");
 const reg = require("../model/registerUser");
 const login = require("../model/signIn");
 const resetPassword = require("../model/resetPassword");
-const regHotel=require("../Model/RegHotel");
-const regOrg=require("../Model/RegOrg");
-const regReq=require("../Model/regReq");
+const regHotel = require("../Model/RegHotel");
+const regOrg = require("../Model/RegOrg");
+const regReq = require("../Model/regReq");
 const update = require("../model/update");
 // const insertProp = require("../model/InsertProperty");
 const Properties = require("../Model/getOrg");
@@ -20,7 +20,6 @@ const DeleteProperty = require("../model/Delete");
 // const viewFav = require("../model/viewFav");
 
 const router = require("express").Router();
-
 
 router.post(
   "/Signup",
@@ -54,21 +53,15 @@ router.post(
   login
 );
 
-router.post("/regOrg",regOrg);
-router.post("/regHotel",regHotel);
-router.post("/regReq",regReq);
+router.post("/regOrg", regOrg);
+router.post("/regHotel", regHotel);
+router.post("/regReq", regReq);
 router.post("/update", update);
 router.post("/reset", resetPassword);
-// router.post("/insertprop", insertProp);
 
-router.post("/getOrg", Properties);
-router.post("/getHotel",getHotel );
-// router.post("/updateprop", UpdateProp);
+router.get("/getOrg", Properties);
+router.post("/getHotel", getHotel);
+
 router.post("/delete", DeleteProperty);
-// router.post("/getrenterprop", getRenterProperty);
-// router.post("/addtofav", addToFav);
-// router.post("/viewfav", viewFav);
-// router.post("/filter", getFilterProperty);
-// router.post("/email", getEmaiId);
 
 module.exports = router;

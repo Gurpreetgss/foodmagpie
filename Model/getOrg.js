@@ -1,7 +1,7 @@
 const conn = require("../config/database");
 
 const GetProperties = (req, res, next) => {
-  let sql = `SELECT * FROM organisation where Org_id=${req.body.User_id}`;
+  let sql = `SELECT * FROM organisation`;
   conn.query(sql, function (err, data, fields) {
     if (err) {
       res.json({
